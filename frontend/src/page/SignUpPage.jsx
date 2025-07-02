@@ -30,6 +30,8 @@ function SignUpPage() {
     const success = validateForm();
 
     if (success === true) signUp(formData);
+
+    toast.success("Account created successfully");
   };
 
   return (
