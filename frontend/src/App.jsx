@@ -9,9 +9,11 @@ import { useAuthStore } from "./store/useAuth.store";
 import { useEffect } from "react";
 import { CgSpinner } from "react-icons/cg";
 import { Toaster } from "react-hot-toast";
+import { useThemeStore } from "./store/useThene.store";
 
 function App() {
   const { authUser, checkAuth, isChecking } = useAuthStore();
+  const { theme } = useThemeStore();
 
   useEffect(() => {
     checkAuth();
@@ -26,7 +28,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div data-theme={theme}>
       <Navbar />
 
       <Routes>
